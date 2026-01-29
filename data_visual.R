@@ -2,13 +2,12 @@
 library(ggplot2)
 
 #create visual for mtcars
-ggplot(mtcars, aes(x = factor(cyl), y = mpg, color = factor(am))) +
-  geom_jitter(width = 0.1, size = 3) +
+ggplot(mtcars, aes(x = factor(cyl), y = mpg)) +
+  geom_boxplot(fill = "skyblue") +
+  geom_jitter(width = 0.1, alpha = 0.6) +
   labs(
-    title = "MPG vs Cylinders by Transmission",
+    title = "MPG by Number of Cylinders",
     x = "Cylinders",
-    y = "MPG",
-    color = "Transmission (0=Auto,1=Manual)"
+    y = "Miles per Gallon (MPG)"
   ) +
   theme_minimal()
-
